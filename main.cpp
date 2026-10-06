@@ -24,7 +24,6 @@ int main() {
     cout << "Enter service fee: " ;
     cin >> service_fee ;
 
-    // PROCESS
     double food_subtotal = food_prices * quantity ;
     double delivery_charge ;
 
@@ -40,7 +39,6 @@ int main() {
     double total_payment = subtotal_after_discount + delivery_charge + service_fee ;
     double estimated_time = 15 + (delivery_distance * time_per_km) ;
 
-    // OUTPUT
     cout << "\nFood Subtotal: RM" << food_subtotal ;
     cout << "\nDelivery Charge: RM" << delivery_charge ;
     cout << "\nTotal Payment: RM" << total_payment ;
