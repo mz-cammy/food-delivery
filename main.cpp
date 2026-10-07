@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std ;
 
+void getUserInput(double &prices, double &quantity, double &distance, string &method, double &voucher, double &fee) ;
 void method(string &m, double &d, double &charge) ;
 
 int main() {
@@ -10,22 +11,9 @@ int main() {
     double delivery_distance ;
     string delivery_method ;
     double voucher, service_fee ;
-    double rate_per_km = 2.0 ;     
-    double express_fee = 5.0 ;     
     double time_per_km = 3.0 ;    
 
-    cout << "Enter food price: " ;
-    cin >> food_prices ;
-    cout << "Enter quantity: " ;
-    cin >> quantity ;
-    cout << "Enter delivery distance (km): " ;
-    cin >> delivery_distance ;
-    cout << "Enter delivery method (Standard/Express): " ;
-    cin >> delivery_method ;
-    cout << "Enter voucher amount: " ;
-    cin >> voucher ;
-    cout << "Enter service fee: " ;
-    cin >> service_fee ;
+	getUserInput(food_prices, quantity, delivery_distance, delivery_method, voucher, service_fee) ;
 
     // PROCESS
     double food_subtotal = food_prices * quantity ;
@@ -56,4 +44,19 @@ void method(string &m, double &d, double &charge){
 	} else {
 		charge = 0 ; 
 	}
+}
+
+void getUserInput(double &prices, double &quantity, double &distance, string &method, double &voucher, double &fee){
+	cout << "Enter food price: " ;
+    cin >> prices ;
+    cout << "Enter quantity: " ;
+    cin >> quantity ;
+    cout << "Enter delivery distance (km): " ;
+    cin >> distance ;
+    cout << "Enter delivery method (Standard/Express): " ;
+    cin >> method ;
+    cout << "Enter voucher amount: " ;
+    cin >> voucher ;
+    cout << "Enter service fee: " ;
+    cin >> fee ;
 }
